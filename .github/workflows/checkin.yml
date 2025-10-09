@@ -38,3 +38,10 @@ jobs:
         GITHUB_ACTIONS: true
       run: |
         python leaflow_checkin.py
+
+    - name: Delete workflow runs
+      uses: Mattraks/delete-workflow-runs@main
+      continue-on-error: true
+      with:
+        retain_days: 0
+        keep_minimum_runs: 1
